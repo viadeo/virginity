@@ -1,0 +1,14 @@
+#!/usr/bin/env ruby
+require "rubygems"
+require 'bundler/setup'
+Bundler.require
+$:.unshift(File.expand_path('../lib', File.dirname(__FILE__)))
+require 'virginity'
+include Virginity
+
+ARGV.dup
+ARGV.each_with_index do |f, i|
+  puts "="*80, "#{i}: #{f}", "-"*80
+  v = Vcard.from_vcard(File.read(f))
+  puts  v
+end

@@ -1,18 +1,23 @@
-*.gem
-*.rbc
-.bundle
-.config
-coverage
-InstalledFiles
-lib/bundler/man
-pkg
-rdoc
-spec/reports
-test/tmp
-test/version_tmp
-tmp
+# reject OS X specific files
+*.DS_Store
 
-# YARD artifacts
-.yardoc
-_yardoc
+# ignore the backup-files Kate (a KDE-editor) writes
+.*~
+# vim backup files
+.*.swp
+
+# ignore .directory-files
+.directory
+*/.directory
+
+coverage
+coverage.data
+
+cleaning.html
+
+pkg/*
+
 doc/
+.yardoc/
+tmp/
+.bundle

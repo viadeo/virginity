@@ -1,0 +1,103 @@
+0.3.23
+======
+- queries that accept a hash-format
+- Patching now uses a Diff object
+
+0.3.22
+======
+- improved exception handling
+
+0.3.21
+======
+- params doesn't take options
+
+0.3.20
+======
+- DirectoryInformation#subset?(other) and DirectoryInformation#superset?(other)
+
+0.3.19
+======
+- bugfix: a comma is a significant character in a phone number. It is a pause.
+
+0.3.18
+======
+- api extensions for:
+  - getting a sha1 hash for a field
+  - rendering fields as json or xml
+
+0.3.17
+======
+- recognize more significant characters in phone numbers
+
+0.3.16
+======
+- clean address fields with not enough parts
+
+0.3.15
+======
+- apply_patch is now called patch!
+- specialized param-constructors
+- structured-field.empty?
+- add soocial_private? and soocial_private= that could be used to hide some fields from the vcard
+
+0.3.14
+======
+- methods for displaying patches
+
+0.3.13
+======
+- adding INTERNET to the list of accepted shorthand params (not in the standard but commonly used)
+
+0.3.12
+======
+- add XSoocialCustom to known fields
+
+0.3.11
+======
+- turns out that folding was not the problem. But we improved it anyway.
+
+0.3.10
+======
+- bugfix, folding inserted newlines after exactly 75 chars even when there are no more chars in that line
+
+0.3.9
+=====
+- date cleaning
+
+0.3.8
+=====
+- made text list decoding faster
+
+0.3.7
+=====
+- raise invalidVcard in constructor
+
+0.3.6
+=====
+- Promote X-PHONETIC-{FIRST,LAST}-NAME to text fields.
+
+0.3.5
+=====
+- return lines that are too wide but cannot be folded (2.1)
+
+version 0.3.4
+=============
+- fixing bug where vCard 2.1 writer would encode a value as quoted printable twice. (double)
+
+version 0.3.3
+=============
+- remove double definition that was prompting warnings
+
+=============
+- read vCard 2.1 with empty paramlist
+
+version 0.3.1
+=============
+- cleaner that removes all photos except the first
+- cleaner to remove all logos except the first
+
+version 0.3.0
+=============
+- completely separated 3.0 and 2.1 parsing (common case faster, erronous vcard parsing is slower)
+- added support for patching vcards (so one can rebase changes on top of another vcard now)
+

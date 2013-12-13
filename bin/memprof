@@ -1,0 +1,24 @@
+#!/usr/bin/env ruby
+$:.unshift(File.expand_path('../lib', File.dirname(__FILE__)))
+require "rubygems"
+require 'bundler/setup'
+Bundler.require
+require 'optparse'
+
+options = {}
+OptionParser.new do |opts|
+  opts.on("-f", "--file=filename", String, "a file containing one or more vCards") { |v| options[:file] = v }
+  opts.parse!(ARGV)
+end
+
+
+require 'virginity'
+include Virginity
+require 'measurebation'
+starting_time = Time.now
+Measurebation::memprof! do
+  Vcard.load_all_from(options[:file])
+end
+processing_time = Time.now - starting_time
+puts "#{"%.2f" % (processing_time)}s"
+

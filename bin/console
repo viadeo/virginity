@@ -1,0 +1,9 @@
+#!/usr/bin/env ruby
+$:.unshift(File.expand_path('../lib', File.dirname(__FILE__)))
+require "rubygems"
+require 'bundler/setup'
+Bundler.require
+require 'virginity'
+include Virginity
+require 'irb'
+IRB.start

@@ -1,0 +1,10 @@
+= objectives =
+
+- read quirky vcards (to a certain extent)
+- output in normalized and standard format
+- ouptut in common quirky formats (like BASE64)
+
+- different interfaces for inspecting and adapting the data in different ways
+  - as_string
+  - as_dirinfo -> as contentlines (group, name, params, field)
+  - as_vcard_fields (with decoded values)
