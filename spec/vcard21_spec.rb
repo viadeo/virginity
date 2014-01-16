@@ -220,6 +220,7 @@ end_vcard
     versions.size.should == 1
     versions.first.raw_value.should == "3.0"
   end
+end
 
 
 describe "encoding=8bit param" do
