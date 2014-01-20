@@ -22,7 +22,7 @@ describe "Virginity::Vcard21" do
   end
 
   specify "read a vcard with quoted printable values" do
-    p = Vcard21::Parser.new(File.read("#{VCARDS_ROOT}/aurora21.vcf"))
+    p = Vcard21::Parser.new(File.read("#{VCARDS_ROOT}/fake21.vcf"))
     lambda{ p.parse! }.should_not raise_error
   end
 
