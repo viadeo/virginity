@@ -31,14 +31,6 @@ describe "Virginity::Vcard21" do
     lambda{ p.parse! }.should_not raise_error
   end
 
-  specify "read a vcard with base64 values" do
-    p = Vcard21::Parser.new(File.read("#{VCARDS_ROOT}/evamarie21.vcf"))
-    lambda{ p.parse! }.should_not raise_error
-#     p.stats_histogram.each do |x|
-#       puts "#{x.first.inspect}: #{x.last}"
-#     end
-  end
-
   specify "read a vcard with an incomplete name values" do
     p = Vcard21::Parser.new(File.read("#{VCARDS_ROOT}/incomplete_n21.vcf"))
     lambda{ p.parse! }.should_not raise_error
