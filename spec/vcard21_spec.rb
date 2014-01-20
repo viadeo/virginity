@@ -128,14 +128,14 @@ end
 
 describe "converting from vCard 2.1 to Virginity::Vcard " do
   specify "read a vcard with quoted printable values" do
-    aurora = File.read("#{VCARDS_ROOT}/aurora21.vcf")
+    aurora = File.read("#{VCARDS_ROOT}/zeus21.vcf")
     (aurora =~ /QUOTED-PRINTABLE/i).should_not be_nil
     v = Vcard.from_vcard21(aurora)
     (v.to_s =~ /QUOTED-PRINTABLE/i).should be_nil
   end
 
   it "should make a vCard 3.0 from it" do
-    eva = Vcard.from_vcard21(File.read("#{VCARDS_ROOT}/evamarie21.vcf"))
+    eva = Vcard.from_vcard21(File.read("#{VCARDS_ROOT}/support21.vcf"))
     (eva/"VERSION:3.0").should_not be_empty
   end
 end
