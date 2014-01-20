@@ -27,7 +27,7 @@ describe "Virginity::Vcard21" do
   end
 
   specify "read a vcard with base64 values" do
-    p = Vcard21::Parser.new(File.read("#{VCARDS_ROOT}/pci21.vcf"))
+    p = Vcard21::Parser.new(File.read("#{VCARDS_ROOT}/support21.vcf"))
     lambda{ p.parse! }.should_not raise_error
   end
 
@@ -151,7 +151,7 @@ end
 
 describe "converting from vCard 2.1 to 3.0 reading a vcard with a photo" do
   specify "base64 ===> b" do
-    pci= File.read("#{VCARDS_ROOT}/pci21.vcf")
+    pci= File.read("#{VCARDS_ROOT}/support21.vcf")
     (pci.to_s =~ /BASE64/i).should_not be_nil
     v = Vcard.from_vcard21(pci)
     (v.to_s =~ /BASE64/i).should be_nil
