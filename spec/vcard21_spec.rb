@@ -155,11 +155,11 @@ describe "converting from vCard 2.1 to 3.0 reading a vcard with a charset" do
   include Encodings
 
   specify "charset == 'UTF-8'" do
-    aurora = File.read("#{VCARDS_ROOT}/aurora21.vcf")
+    aurora = File.read("#{VCARDS_ROOT}/zeus21.vcf")
     (aurora =~ /CHARSET/i).should_not be_nil
     v = Vcard.from_vcard21(aurora)
     (v.to_s =~ /CHARSET/i).should be_nil
-    (v/'NOTE').first.raw_value.should include "opérationnel"
+    (v/'ADR').first.raw_value.should include "Carreño Quiñones Street"
   end
 
   specify "charset != 'UTF-8'" do
