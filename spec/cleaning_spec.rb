@@ -98,7 +98,7 @@ end_vcard
 
   specify "X-Synthesis-Ref[number]" do
     v = File.read("#{VCARDS_ROOT}/faulty/cecilia.vcf")
-    lambda{Vcard.from_vcard21(v) }.should_not raise_error
+    lambda{ Vcard.from_vcard21(v) }.should_not raise_error
   end
 
   specify "whitespace after field contents" do
