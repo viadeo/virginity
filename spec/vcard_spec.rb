@@ -38,9 +38,9 @@ end_vcard
 
   specify "read larger list" do
     lambda { Virginity::Vcard.list(File.read("#{VCARDS_ROOT}/list/list.vcf")) }.should_not raise_error
-    Virginity::Vcard.vcards_in_list(File.read("#{VCARDS_ROOT}/list/list.vcf")).size.should == 11
+    Virginity::Vcard.vcards_in_list(File.read("#{VCARDS_ROOT}/list/list.vcf")).size.should == 8
     list = Virginity::Vcard.list(File.read("#{VCARDS_ROOT}/list/list.vcf"))
-    list.size.should == 11
+    list.size.should == 8
     list.last.name.formatted.should == "Ζεύς Carreño Quiñones"
   end
 
