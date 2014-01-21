@@ -3,7 +3,7 @@ require "#{File.dirname(__FILE__)}/spec_helper"
 
 describe "Fix broken photos" do
   before do
-    @vcards = Dir.glob("#{VCARDS_ROOT}/broken_photos/*.vcf").map {|vcf| File.read vcf }
+    @vcards = Dir.glob("#{VCARDS_ROOT}/broken_photos/*.vcf").map { |vcf| File.read vcf }
     @vcards.should_not be_empty
   end
 
