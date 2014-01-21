@@ -147,13 +147,11 @@ end
 
 describe "changing values" do
   specify "changing text (telnr)" do
-    v = Virginity::Vcard.from_vcard21(File.read("#{VCARDS_ROOT}/aurora21.vcf"))
+    v = Virginity::Vcard.from_vcard21(File.read("#{VCARDS_ROOT}/johnsmith21.vcf"))
     (v/"TEL").should_not be_empty
-    (v/"TEL").first.text.should == "+33620851986"
+    (v/"TEL").first.text.should == "+1 (919) 555-1234"
     (v/"TEL").first.text = "2222 22 2"
     (v/"TEL").first.text.should == "2222 22 2"
-#     (v/"TEL").first.to_s.should include "2222 22 2"
-#     v.to_s.should include "2222 22 2"
   end
 end
 
